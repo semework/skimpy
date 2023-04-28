@@ -36,7 +36,7 @@ CASE_STYLES = {
     "upper",
 }
 
-console = Console()
+console = Console(record=True)
 QUANTILES = [0, 0.25, 0.75, 1]
 HIST_BINS = 6
 UNICODE_HIST = {
@@ -563,6 +563,7 @@ def skim(
     # Weirdly, iteration over list of tabs misses last entry
     grid.add_row(list_of_tabs[-1])
     console.print(Panel(grid, title="skimpy summary", subtitle="End"))
+    return grid
 
 
 @typechecked
