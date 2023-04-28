@@ -466,7 +466,7 @@ def _datetime_variable_summary_table(xf: pd.DataFrame) -> pd.DataFrame:
 @typechecked
 def skim(
     df_in: pd.DataFrame, header_style: str = "bold cyan", **colour_kwargs: str
-) -> None:
+) -> rich.table.Table:
     """Skim a data frame and return statistics.
 
     skim is an alternative to pandas.DataFrame.describe(), quickly providing
